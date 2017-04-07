@@ -1,1 +1,1 @@
-A simple eCommerce System written in Go language.
+An open source eCommerce System written in Go language.
