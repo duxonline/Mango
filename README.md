@@ -1,1 +1,1 @@
-A open source shopping cart written in Go language.
+A feature-rich open source shopping cart written in Go language.
