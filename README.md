@@ -1,1 +1,1 @@
-A simple open source eCommerce System written in Go language.
+MangoCommerce is a simple open source eCommerce System written in Go language. 
