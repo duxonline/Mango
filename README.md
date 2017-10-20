@@ -3,3 +3,5 @@ MangoCommerce is an easy to use and feature rich open source eCommerce System wr
 # Feature
 ## Feature 1
 ### Featrue 1.1
+
+**This is a bold text**
