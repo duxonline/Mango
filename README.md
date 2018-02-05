@@ -18,28 +18,28 @@ MangoCommerce is an easy to use and feature rich open source eCommerce System wr
 3. From Fiddler menu, choose Rules -> Customize Rules and then paste the following script inside a method called OnBeforeResponse:
 
 ```
-		/* Log Ladbrokes request and response here */
-		var timeMS = (new Date()).getTime();
+/* Log Ladbrokes request and response here */
+var timeMS = (new Date()).getTime();
 
-		var requestFileName = "C:\\Fiddler\\" + timeMS + "_Request.txt";
-		var requestBodyFileName = "C:\\Fiddler\\" + timeMS + "_RequestBody.txt";
+var requestFileName = "C:\\Fiddler\\" + timeMS + "_Request.txt";
+var requestBodyFileName = "C:\\Fiddler\\" + timeMS + "_RequestBody.txt";
 		
-		var responseFileName = "C:\\Fiddler\\" + timeMS + "_Response.txt";
-		var responseBodyFileName = "C:\\Fiddler\\" + timeMS + "_ResponseBody.txt";
+var responseFileName = "C:\\Fiddler\\" + timeMS + "_Response.txt";
+var responseBodyFileName = "C:\\Fiddler\\" + timeMS + "_ResponseBody.txt";
 		
 
-		if( oSession.host == "lb-yang.devlb.net" && 
-			oSession.uriContains("/api/1/betting/betslipBet") && 
-			oSession.RequestMethod == "POST") { 
+if( oSession.host == "lb-yang.devlb.net" && 
+	oSession.uriContains("/api/1/betting/betslipBet") && 
+	oSession.RequestMethod == "POST") { 
 			
-			oSession.utilDecodeResponse(); 
+	oSession.utilDecodeResponse(); 
 			
-			oSession.SaveRequest(requestFileName ,true); 
-			oSession.SaveRequestBody(requestBodyFileName); 
+	oSession.SaveRequest(requestFileName ,true); 
+	oSession.SaveRequestBody(requestBodyFileName); 
 			
-			oSession.SaveResponse(responseFileName, true);
-			oSession.SaveResponseBody(responseBodyFileName);
-		}
-		/* End logging */
+	oSession.SaveResponse(responseFileName, true);
+	oSession.SaveResponseBody(responseBodyFileName);
+}
+/* End logging */
 
 ```
