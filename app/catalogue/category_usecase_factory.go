@@ -1,5 +1,7 @@
 package catalogue
 
 func CreateUseCase() InputPort {
-	return &UseCase{}
+	return &UseCase{
+		CategoryRepo: &CategoryPsqlAdapter{},
+	}
 }

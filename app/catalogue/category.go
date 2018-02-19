@@ -7,10 +7,10 @@ import (
 )
 
 type Category struct {
-	ID          int
-	Name        string
-	ParentID    int
-	CreatedDate time.Time
-	UpdatedAT   *time.Time
-	GuidID      uuid.UUID
+	ID        int
+	Name      string
+	ParentID  int
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	GuidID    uuid.UUID
 }

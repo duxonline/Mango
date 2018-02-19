@@ -1,7 +1,7 @@
 package catalogue
 
 type UseCase struct {
-	// BcRequestRepo    BcRequestRepo
+	CategoryRepo CategoryRepo
 }
 
 func (uc *UseCase) AddCategory(request AddCategoryRequest) (*Category, error) {
