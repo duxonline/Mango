@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/frankwang0/MangoCommerce/catalogue"
+	"github.com/frankwang0/MangoCommerce/app/catalogue"
 	"github.com/frankwang0/MangoCommerce/routes"
 	"github.com/gorilla/mux"
 )
