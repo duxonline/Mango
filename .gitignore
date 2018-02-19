@@ -1,36 +1,12 @@
-# Compiled Object files, Static and Dynamic libs (Shared Objects)
-*.o
-*.a
-*.so
-
-# Folders
-_obj
-_test
-
-# Architecture specific extensions/prefixes
-*.[568vq]
-[568vq].out
-
-*.cgo1.go
-*.cgo2.c
-_cgo_defun.c
-_cgo_gotypes.go
-_cgo_export.*
-
-_testmain.go
-
+# Binaries for programs and plugins
 *.exe
-*.test
-*.prof
+*.exe~
+*.dll
+*.so
+*.dylib
 
-.vscode
-.DS_Store
-api
-api-v*
-debug
-api.PID
-certs/profile_ca.crt
-certs/profile_ca.key
-certs/profile_client.crt
-certs/profile_client.key
-config/.env
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
