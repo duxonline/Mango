@@ -1,5 +1,9 @@
 package catalogue
 
+import (
+	"github.com/frankwang0/MangoCommerce/common"
+)
+
 type InputPort interface {
-	AddCategory(request AddCategoryRequest) (*Category, error)
+	CreateCategory(request CreateCategoryRequest) (*Category, *common.AppError)
 }

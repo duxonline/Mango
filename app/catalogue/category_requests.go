@@ -1,6 +1,6 @@
 package catalogue
 
-type AddCategoryRequest struct {
-	CategoryName string
-	ParentId     int
+type CreateCategoryRequest struct {
+	Name     string
+	ParentID int
 }

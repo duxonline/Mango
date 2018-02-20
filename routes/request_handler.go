@@ -5,14 +5,16 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+
+	"github.com/frankwang0/MangoCommerce/common"
 )
 
-type RequestHandler func(w http.ResponseWriter, r *http.Request) (interface{}, error)
+type RequestHandler func(w http.ResponseWriter, r *http.Request) (interface{}, *common.AppError)
 
 func (fn RequestHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	result, err := fn(w, r)
-	if err != nil {
-		fmt.Println(err)
+	result, appErr := fn(w, r)
+	if appErr != nil {
+		fmt.Println(appErr)
 		return
 	}
 

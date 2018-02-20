@@ -1,9 +1,13 @@
 package catalogue
 
+import (
+	"github.com/frankwang0/MangoCommerce/common"
+)
+
 type UseCase struct {
 	CategoryRepo CategoryRepo
 }
 
-func (uc *UseCase) AddCategory(request AddCategoryRequest) (*Category, error) {
+func (uc *UseCase) CreateCategory(request CreateCategoryRequest) (*Category, *common.AppError) {
 	return &Category{}, nil
 }
