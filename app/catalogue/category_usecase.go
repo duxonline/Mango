@@ -9,5 +9,9 @@ type UseCase struct {
 }
 
 func (uc *UseCase) CreateCategory(request CreateCategoryRequest) (*Category, *common.AppError) {
+	errCode := request.Validate()
+	if errCode != common.AllGood {
+		return nil, &common.AppError{ErrorCode: errCode, HttpStatusCode: 400}
+	}
 	return &Category{}, nil
 }

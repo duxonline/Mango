@@ -1,3 +1,6 @@
 package common
 
-// const ()
+const (
+	CategoryNameIsRequired = 1001
+	AllGood                = 9999
+)
