@@ -13,5 +13,13 @@ func (uc *UseCase) CreateCategory(request CreateCategoryRequest) (*Category, *co
 	if errCode != common.AllGood {
 		return nil, &common.AppError{ErrorCode: errCode, HttpStatusCode: 400}
 	}
-	return &Category{}, nil
+
+	category := newCategory(request)
+
+	createErr := uc.CategoryRepo.Create(&category)
+	if createErr != nil {
+		return nil, &common.AppError{Error: createErr, HttpStatusCode: 500}
+	}
+
+	return &category, nil
 }

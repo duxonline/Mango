@@ -8,7 +8,8 @@ func Test_store_admins_add_top_category(t *testing.T) {
 	// Arrange
 	var name = "Books"
 	request := CreateCategoryRequest{
-		Name: name,
+		Name:     name,
+		ParentID: 0,
 	}
 	sut := CreateUseCase()
 
