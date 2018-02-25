@@ -20,6 +20,7 @@ func OpenDB() *gorm.DB {
 
 	db, err := gorm.Open("postgres", connectionString)
 	if err != nil {
+		fmt.Println(err)
 		panic("failed to connect database " + connectionString)
 	}
 

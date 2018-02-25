@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/frankwang0/MangoCommerce/app/catalogue"
+	_ "github.com/frankwang0/MangoCommerce/config"
 	"github.com/frankwang0/MangoCommerce/routes"
 	"github.com/gorilla/mux"
 )

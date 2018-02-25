@@ -20,6 +20,9 @@ CREATE SEQUENCE category_id_seq
 
 ALTER SEQUENCE category_id_seq OWNED BY category.id;
 
+
+ALTER TABLE ONLY category ALTER COLUMN id SET DEFAULT nextval('category_id_seq'::regclass);
+
 -- +goose Down
 
 DROP TABLE category;

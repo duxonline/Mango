@@ -19,5 +19,10 @@ func newCategory(request CreateCategoryRequest) Category {
 	return Category{
 		Name:     request.Name,
 		ParentID: request.ParentID,
+		GuidID:   uuid.NewRandom(),
 	}
+}
+
+func (Category) TableName() string {
+	return "category"
 }
