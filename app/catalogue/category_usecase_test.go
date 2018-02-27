@@ -25,17 +25,7 @@ func Test_store_admins_add_parent_category(t *testing.T) {
 	category, createErr := sut.CreateCategory(request)
 
 	// Assert
-	if createErr != nil {
-		t.Errorf("Creating category throws an error.")
-	}
-
-	if category.Name != name {
-		t.Errorf("Category name is not saved correctly.")
-	}
-
-	if category.ParentID != 0 {
-		t.Errorf("Category parentId is not saved correctly.")
-	}
+	AssertCategory(t, category, createErr, name, 0)
 }
 
 func Test_store_admins_add_child_category(t *testing.T) {
