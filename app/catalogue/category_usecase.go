@@ -23,3 +23,7 @@ func (uc *UseCase) CreateCategory(request CreateCategoryRequest) (*Category, *co
 
 	return &category, nil
 }
+
+func (uc *UseCase) GetByID(categoryID int) (*Category, *common.AppError) {
+	return nil, nil
+}
