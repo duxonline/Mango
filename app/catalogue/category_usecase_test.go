@@ -54,32 +54,28 @@ func Test_store_admins_add_child_category(t *testing.T) {
 
 func Test_retrieve_a_category(t *testing.T) {
 	var name = "Books"
+	var parentID = 0
+
 	request := CreateCategoryRequest{
 		Name:     name,
-		ParentID: 0,
+		ParentID: parentID,
 	}
 	sut := CreateUseCase()
 
 	categoryCreated, _ := sut.CreateCategory(request)
 
-	categoryFetched, fetchErr := sut.GetByID(categoryCreated.id)
+	categoryFetched, fetchErr := sut.GetByID(categoryCreated.ID)
 
-	if fetchErr != nil {
-		t.Errorf("Fetching category throws an error.")
-	}
-
-	if categoryFetched == nil {
-		t.Errorf("Fetching category return nil.")
-	}
-
-	if categoryFetched.Name != name {
-		t.Errorf("Category name is not correct.")
-	}
+	AssertCategory(t, categoryFetched, fetchErr, name, 0)
 }
 
-func AssertCategory(t *testing.T, category *Category, createErr *common.AppError, name string, parentID int) {
-	if createErr != nil {
-		t.Errorf("Creating category throws an error.")
+func AssertCategory(t *testing.T, category *Category, appErr *common.AppError, name string, parentID int) {
+	if appErr != nil {
+		t.Errorf("An error has been thrown.")
+	}
+
+	if category == nil {
+		t.Errorf("Current category is nil.")
 	}
 
 	if category.Name != name {

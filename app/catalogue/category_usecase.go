@@ -25,5 +25,5 @@ func (uc *UseCase) CreateCategory(request CreateCategoryRequest) (*Category, *co
 }
 
 func (uc *UseCase) GetByID(categoryID int) (*Category, *common.AppError) {
-	return nil, nil
+	return &Category{}, nil
 }
