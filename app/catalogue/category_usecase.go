@@ -25,5 +25,10 @@ func (uc *UseCase) CreateCategory(request CreateCategoryRequest) (*Category, *co
 }
 
 func (uc *UseCase) GetByID(categoryID int) (*Category, *common.AppError) {
-	return &Category{}, nil
+	category, categoryErr := uc.CategoryRepo.GetByID(categoryID)
+	if categoryErr != nil {
+		return nil, &common.AppError{Error: categoryErr, HttpStatusCode: 500}
+	}
+
+	return category, nil
 }

@@ -12,3 +12,16 @@ func (adapter *CategoryPsqlAdapter) Create(category *Category) error {
 	result := db.Debug().Create(category)
 	return result.Error
 }
+
+func (adapter *CategoryPsqlAdapter) GetByID(categoryID int) (*Category, error) {
+	db := db.OpenDB()
+	defer db.Close()
+
+	var category Category
+	result := db.Debug().Where(&Category{ID: categoryID}).First(&category)
+	if result.RecordNotFound() {
+		return nil, nil
+	}
+
+	return &category, result.Error
+}
